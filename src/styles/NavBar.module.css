@@ -1,8 +1,4 @@
 .NavBar {
     background-color: #ffffff;
     border: 1px solid #dadadf;
-}
-
-.nav-right {
-    justify-content: flex-end;
-}
+  }
