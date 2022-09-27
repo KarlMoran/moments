@@ -41,7 +41,6 @@ const Post = (props) => {
     }
   };
 
-
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
@@ -85,10 +84,10 @@ const Post = (props) => {
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
             {is_owner && postPage && (
-            <MoreDropdown 
-               handleEdit={handleEdit} 
-               handleDelete={handleDelete} 
-            /> 
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
             )}
           </div>
         </Media>
@@ -98,9 +97,9 @@ const Post = (props) => {
       </Link>
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {content && <Card.Text className="text-center">{content}</Card.Text>}
-        <div className={styles.PostBar}> 
-        {is_owner ? (
+        {content && <Card.Text >{content}</Card.Text>}
+        <div className={styles.PostBar}>
+          {is_owner ? (
             <OverlayTrigger
               placement="top"
               overlay={<Tooltip>You can't like your own post!</Tooltip>}
@@ -123,6 +122,21 @@ const Post = (props) => {
               <i className="far fa-heart" />
             </OverlayTrigger>
           )}
+          {/* <OverlayTrigger
+          placement = "top"
+          transition = {false}
+          overlay = {<Tooltip>Login to like post!</Tooltip>}
+          >
+            {
+              ({ ref, ...triggerHandler }) => (
+                <i 
+                className="far fa-heart"
+                {...triggerHandler}
+                ref={ref}
+                ></i>
+              )
+            }
+          </OverlayTrigger> */}
           {likes_count}
           <Link to={`/posts/${id}`}>
             <i className="far fa-comments" />

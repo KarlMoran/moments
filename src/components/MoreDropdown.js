@@ -1,17 +1,17 @@
 import React from "react";	
-import Dropdown from "react-bootstrap/Dropdown";	
+import {Dropdown} from "react-bootstrap";	
 import styles from "../styles/MoreDropdown.module.css";	
 // The forwardRef is important!!	
 // Dropdown needs access to the DOM node in order to position the Menu	
-const ThreeDots = React.forwardRef(({ onClick }, ref) => (	
+const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   <i	
-    className="fas fa-ellipsis-v"	
-    ref={ref}	
-    onClick={(e) => {	
-      e.preventDefault();	
-      onClick(e);	
-    }}	
-  />	
+  className="fas fa-ellipsis-v"	
+  ref={ref}	
+  onClick={(e) => {	
+    e.preventDefault();	
+    onClick(e);	
+  }}	
+/>
 ));	
 
 export const MoreDropdown = ({ handleEdit, handleDelete }) => {	
